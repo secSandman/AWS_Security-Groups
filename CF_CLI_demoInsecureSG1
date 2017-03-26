@@ -1,0 +1,3 @@
+aws cloudformation create-stack --stack-name demoInsecureSG1 --template-body file://./demoInsecureSG1
+
+aws cloudformation validate-template --template-body file://./demoInsecureSG1

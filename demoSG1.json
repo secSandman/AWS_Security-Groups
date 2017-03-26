@@ -1,0 +1,27 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+
+  "Description" : "This is a SecuritySandman demo template for an Insecure Security Group with bad remote access network rules. Author takes no responsibility for errors, issues, or damages you may experience as a result of referencing this template. ",
+
+    "Resources" :{
+      "InstanceSecurityGroup" : {
+         "Type" : "AWS::EC2::SecurityGroup",
+         "Properties" : {
+            "GroupDescription" : "Allow http to client host",
+            "VpcId" : "Your-VPC-ID",
+            "SecurityGroupIngress" : [{
+                  "IpProtocol" : "tcp",
+                  "FromPort" : "21,22,3389",
+                  "ToPort" : "21,22,3389",
+                  "CidrIp" : "0.0.0.0/0"
+               }],
+            "SecurityGroupEgress" : [{
+               "IpProtocol" : "tcp",
+               "FromPort" : "21,22,3389",
+               "ToPort" : "21,22,3389",
+               "CidrIp" : "0.0.0.0/0"
+            }]
+         }
+      }
+    }
+  }

@@ -1,1 +1,0 @@
-aws ec2 revoke-security-group-egress --group-id sg-f843a283 --ip-permissions '[{"IpProtocol": "tcp", "FromPort":22, "ToPort": 22, "IpRanges": [{"CidrIp": "0.0.0.0/0"}]}]'
